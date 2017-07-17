@@ -1,0 +1,27 @@
+﻿@model MoviesWebsite.Models.SearchMovies
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "SearchMovies", FormMethod.Post))
+{
+    <form>
+        <div>
+            @Html.LabelFor(model => model.MovieName)
+            @Html.TextBoxFor(model => model.MovieName)
+
+            <input type="submit" id="submitId" value="Search" />
+
+        </div>
+    </form>
+}
+
+<div>@ViewData["message"]</div>
+
+<div>
+    @Html.Partial("_Results", Model)    
+</div>

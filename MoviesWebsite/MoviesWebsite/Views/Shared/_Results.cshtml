@@ -1,0 +1,52 @@
+﻿@model List<MoviesWebsite.Models.SearchMovies>
+
+@if (Model != null)
+{
+    <h4> Movies results</h4>
+    <div>
+        <table cellspacing="0" width="50%" border="1">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Overview
+                    </th>
+                    <th>
+                        Vote
+                    </th>
+                    <th>
+                        Release_Date
+                    </th>
+                    <th>
+                        VideoUrl
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in Model)
+                {
+                    <tr>
+                        <td align="center">
+                            @result.Title
+                        </td>
+                        <td align="center">
+                            @result.Overview
+                        </td>
+                        <td align="center">
+                            @result.Vote_Count
+                        </td>
+                        <td align="center">
+                            @result.Release_Date
+                        </td>
+                        <td align="center">
+                            @result.VideoUrl
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
